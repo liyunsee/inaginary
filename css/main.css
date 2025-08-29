@@ -1,0 +1,246 @@
+@charset "UTF-8";
+
+.inner {
+  /* w1344+m0-a+bg */
+  width: 1344px;
+  margin: 0 auto;
+  /* background: rgba(255, 255, 0, 0.1); */
+}
+
+.hero {
+  max-width: 1920px;
+  margin: 0 auto;
+  height: 646px;
+  /* background: pink; */
+  position: relative; /* posr: .video, .video-title 절대배치의 기준 */
+  overflow: hidden; /* oh: .video가 hero영역을 벗어나는 것을 숨김 */
+}
+
+.hero::after {
+  content: ""; /* ct */
+  /* posa+t0+l0+w100p+h100p+bg */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.video {
+  /* posa+t50p+l50p+w1920+h1080 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1920px;
+  height: 1080px;
+  /* border: 10px solid #f00; */
+
+  transform: translate(-50%, -50%); /* trft */
+}
+
+.video iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+/* .video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+.hero-title {
+  /* posa+t50p+l288+trfty */
+  position: absolute;
+  top: 50%;
+  left: 288px;
+  transform: translateY(-50%);
+  /* background: red; */
+  z-index: 1; /* z1: .hero::after 위로 */
+}
+
+.hero-title h2 {
+  /* fw900+fz80+c+lh1.1 */
+  font-weight: 900;
+  font-size: 80px;
+  color: var(--point-color);
+  line-height: 1.1;
+}
+
+.hero-title h2 b {
+  display: block;
+}
+
+.hero-title p {
+  /* fz48+c+mt12 */
+  font-size: 48px;
+  color: #fff;
+  margin-top: 12px;
+}
+
+.hero-title p strong {
+  font-weight: 700;
+}
+
+.intro {
+  /* p120-0-140 */
+  padding: 120px 0 140px;
+}
+
+.intro-con {
+  /* background: red; */
+  text-align: center; /* tac */
+  width: 897px;
+  margin: 0 auto;
+}
+
+.intro-con h3 {
+  /* fw700+fz48+c */
+  font-weight: 700;
+  font-size: 48px;
+  color: var(--title-color);
+}
+.intro-con p {
+  /* fw500+fz24 */
+  font-weight: 500;
+  font-size: 24px;
+  margin-top: 24px; /* mt24 */
+  padding: 0 82px; /* p0-82 */
+}
+
+.intro-list {
+  background: #f3f6f6;
+  padding: 80px 114px;
+  margin-top: 97px;
+  display: flex;
+  gap: 108px;
+}
+
+.intro-list li {
+  /* border: 1px solid #000; */
+  /* w300+mih262 */
+  width: 300px;
+  min-height: 262px;
+  text-align: center;
+}
+
+.intro-list li dl::before {
+  content: ""; /* ct */
+  display: block;
+  width: 106px;
+  height: 106px;
+  margin: 0 auto;
+  background: var(--main-color) no-repeat 50%;
+  /* bdrs50p */
+  border-radius: 50%;
+}
+
+.intro-list li:nth-child(1) dl::before {
+  background-image: url(../img/ico-intro1.svg);
+}
+.intro-list li:nth-child(2) dl::before {
+  background-image: url(../img/ico-intro2.svg);
+}
+.intro-list li:nth-child(3) dl::before {
+  background-image: url(../img/ico-intro3.svg);
+}
+
+.intro-list li dl dt {
+  /* fw700+fz32+c */
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--main-color);
+  margin-top: 24px;
+}
+.intro-list li dl dd {
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 24px;
+}
+
+.intro .btn {
+  /* m30-a-0 */
+  margin: 30px auto 0;
+}
+
+.link-list {
+  display: flex;
+}
+
+.link-list li {
+  /* width: 960px; */
+  width: 50%;
+  height: 395px;
+  background: no-repeat 0 0 / cover;
+
+  padding: 84px 100px;
+  color: #fff;
+
+  position: relative; /* posr: li::before 절대배치의 기준 */
+}
+
+.link-list li::before {
+  content: "";
+  /* posa+t0+l0-+w100p+h100p+bg */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* z-index: -1; */
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 150, 83, 0.6);
+  opacity: 0;
+  transition: 0.4s; /* trs.4s */
+}
+
+.link-list li:hover::before {
+  opacity: 1;
+  backdrop-filter: blur(4px);
+}
+
+.link-list li:hover a {
+  color: #fff;
+}
+
+.link-list li:nth-child(1) {
+  background-image: url(../img/link-pic1.jpg);
+}
+.link-list li:nth-child(2) {
+  background-image: url(../img/link-pic2.jpg);
+}
+
+.link-title {
+  position: relative;
+  z-index: 5; /* z5: li::before 위로 */
+}
+
+.link-title h4 {
+  /* fw900+fz50+lh1 */
+  font-weight: 900;
+  font-size: 50px;
+  line-height: 1;
+}
+
+.link-title h4 b {
+  display: block;
+}
+
+.link-title p {
+  /* fw700+fz20+mt21+lh1 */
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 21px;
+  line-height: 1;
+}
+
+@keyframes showAni {
+  0% {
+    opacity: 0;
+    transform: translate(0, -300px), rotate(45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
+  }
+}

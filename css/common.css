@@ -1,0 +1,225 @@
+@charset "UTF-8";
+
+/* Pretendard 웹폰트 추가 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+:root {
+  font-size: 100%; /* fz100p: 16px --> 1rem */
+  --main-color: #12562f;
+  --title-color: #232f28;
+  --text-color: #666;
+  --point-color: #a0ffc8;
+  --point-color2: #12562f;
+}
+
+::selection {
+  background: var(--point-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--main-color);
+}
+
+body {
+  font: 1rem/1.5 "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic",
+    "맑은 고딕", sans-serif;
+  color: var(--text-color);
+  background: #fff;
+  text-transform: capitalize; /* ttc: 단어의 첫번째 글자를 대문자로 */
+}
+
+hr,
+.hidden {
+  /* posa+w0+h0+oh */
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+
+  clip-path: inset(100%);
+}
+
+.btn {
+  display: flex; /* df */
+  justify-content: center; /* jcc */
+  align-items: center; /* aic */
+  gap: 12px;
+  border: 1px solid var(--main-color);
+  min-width: 200px;
+  /* max-width: 270px; */
+  height: 50px;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--main-color);
+  /* margin: 50px auto 0; */
+  transition: 0.4s; /* trs.4s */
+  padding: 0 40px;
+}
+
+.btn::after {
+  content: ""; /* ct */
+  /* db+w24+h24+bg */
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(../img/ico-arrow-right.svg) no-repeat 50% 50%;
+}
+
+.btn:hover {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.btn:hover::after {
+  filter: invert(1);
+}
+
+/* 공통 레이아웃 */
+.header {
+  height: 100px;
+}
+
+.logo a {
+  /* w179+h50+bg */
+  width: 179px;
+  height: 50px;
+  background: url(../img/logo.svg) no-repeat 0 0;
+
+  display: block;
+}
+
+.header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  /* background: red; */
+}
+
+.gnb {
+  display: flex;
+  gap: 60px; /* g60 */
+}
+
+.gnb li a {
+  /* db+p10-30+bd */
+  display: block;
+  padding: 10px 0;
+  /* border: 1px solid #000; */
+
+  /* fw700+fz20+c */
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--title-color);
+
+  position: relative; /* posr */
+  /* border: 1px solid #f00; */
+}
+
+.gnb li a::after {
+  content: ""; /* ct */
+  /* posa+b0+l0+w100p+h3+bg */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 0%;
+  height: 3px;
+  background: var(--main-color);
+}
+
+.gnb li a:hover::after {
+  width: 100%;
+  transition: 0.4s; /* trs.4s */
+}
+
+.login {
+  /* db+w40+h40+bd+bdrs50p+bg */
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--main-color);
+  border-radius: 50%;
+  background: url(../img/ico-login.svg) no-repeat 50% 50%;
+}
+
+footer {
+  padding: 77px 0;
+  background: #232f28;
+  color: #fff;
+}
+
+.foot-logo {
+  width: 179px;
+  height: 50px;
+  background: url(../img/foot-logo.svg) no-repeat 0 0;
+}
+
+address {
+  margin-top: 28px;
+  opacity: 0.6; /* op.6 */
+  font-size: 15px;
+}
+
+address dl {
+  display: flex;
+  /* background: yellowgreen; */
+  gap: 8px 16px;
+  flex-wrap: wrap; /* fxww: 줄바꿈 */
+  width: 335px;
+}
+
+address dl dt {
+  font-weight: 700;
+  width: 65px;
+  /* border: 1px solid #f00; */
+}
+address dl dd {
+  width: calc(100% - 65px - 16px);
+  /* border: 1px solid #00f; */
+}
+
+.copyright {
+  margin-top: 32px;
+  font-weight: 700;
+  text-transform: lowercase; /* ttl: 모든 글자를 소문자로 */
+}
+
+.btn-top {
+  position: fixed;
+  /* b227+r290+w54+h54+bdrs50p+bg#000 */
+  bottom: 227px;
+  right: 290px;
+  right: 10%;
+
+  z-index: 100;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #000 url(../img/ico-arrow-top.svg) no-repeat 50% 50%;
+  /* bxsh */
+  box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.btn-top.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  /* margin-top: 40px; */
+  margin: 50px auto 0;
+}

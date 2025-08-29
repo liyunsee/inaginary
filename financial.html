@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>financial | imaginary</title>
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/sub.css" />
+    <script src="js/common.js"></script>
+  </head>
+  <body>
+    <!-- a.hidden{본문 바로가기} -->
+    <a href="#main" class="hidden">본문 바로가기</a>
+    <hr />
+
+    <!-- s: header -->
+    <!-- header#header.header+main#main.main+footer#footer.footer -->
+    <header id="header" class="header">
+      <div class="inner">
+        <nav>
+          <!-- h1.logo>a{imaginary} -->
+          <h1 class="logo">
+            <a href="./index.html"><i class="hidden">imaginary</i></a>
+          </h1>
+          <!-- ul.gnb>li*4>a -->
+          <ul class="gnb">
+            <li><a href="company.html">company</a></li>
+            <li><a href="franchise.html">franchise</a></li>
+            <li><a href="notice.html">notice</a></li>
+            <li><a href="financial.html">financial</a></li>
+            <li><a href="login.html">login</a></li>
+          </ul>
+          <!-- .util-menu>a.login -->
+          <div class="util-menu">
+            <a href="login.html" class="login"><i class="hidden">로그인</i></a>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- // e: header -->
+    <hr />
+
+    <!-- s: main -->
+    <main id="main" class="sub-main financial">
+      <section class="sub-visual">
+        <h2>financial</h2>
+      </section>
+
+      <section class="financial-info">
+        <div class="inner">
+          <h3 class="sec-title">재무정보</h3>
+          <div class="unit">단위 : 백만 원</div>
+          <div class="table-container">
+            <i class="hidden">
+              <caption>
+                imaginary 재부정보 관련 표
+              </caption>
+            </i>
+
+            <table>
+              <colgroup>
+                <col style="width: 25%" />
+                <col style="width: 25%" />
+                <col style="width: 25%" />
+                <col style="width: 25%" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" class="first-col">구분</th>
+                  <th scope="col">2021년</th>
+                  <th scope="col">2020년</th>
+                  <th scope="col">2019년</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="first-col">유동자산</td>
+                  <td>5,977,496</td>
+                  <td>6,104,907</td>
+                  <td>5,255,222</td>
+                </tr>
+                <tr>
+                  <td class="first-col">비유동자산</td>
+                  <td>4,512,793</td>
+                  <td>3,873,997</td>
+                  <td>4,457,815</td>
+                </tr>
+                <tr>
+                  <td class="first-col highlight">자산총계</td>
+                  <td class="highlight">10,490,289</td>
+                  <td class="highlight">9,978,904</td>
+                  <td class="highlight">9,713,037</td>
+                </tr>
+                <tr>
+                  <td class="first-col">유동부채</td>
+                  <td>3,956,839</td>
+                  <td>4,120,016</td>
+                  <td>4,190,972</td>
+                </tr>
+                <tr>
+                  <td class="first-col">비유동부채</td>
+                  <td>2,174,089</td>
+                  <td>2,228,778</td>
+                  <td>2,266,831</td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td class="first-col">부채총계</td>
+                  <td>6,130,728</td>
+                  <td>6,346,794</td>
+                  <td>6,457,803</td>
+                </tr>
+                <tr>
+                  <td class="first-col highlight-text">자본총계</td>
+                  <td class="highlight-text">4,359,561</td>
+                  <td class="highlight-text">3,632,110</td>
+                  <td class="highlight-text">3,255,234</td>
+                </tr>
+              </tfoot>
+            </table>
+
+            <div class="buttons">
+              <a href="#" class="btn">결산공고 보기</a>
+              <a href="#" class="btn">공시정보 관리규정 보기</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      />
+    </main>
+    <!-- // e: main -->
+    <hr />
+
+    <!-- s: footer -->
+    <footer id="footer" class="footer">
+      <!-- .inner>.foot-logo+address+p.copyright -->
+      <div class="inner">
+        <div class="foot-logo"><i class="hidden">imaginary</i></div>
+
+        <address>
+          <!-- dl>(dt+dd)*4 -->
+          <dl>
+            <dt>address</dt>
+            <dd>경기도 고양시 일산동구 탄중로 416</dd>
+
+            <dt>tel</dt>
+            <dd>031.866.1234</dd>
+
+            <dt>fax</dt>
+            <dd>02.6008.1234</dd>
+
+            <dt>e-mail</dt>
+            <dd>imaginary@gmail.com</dd>
+          </dl>
+        </address>
+
+        <p class="copyright">
+          Copyright &copy; 2022 &amp; min &middot; max imaginary. All Right
+          Reserved
+        </p>
+      </div>
+    </footer>
+    <!-- // e: footer -->
+
+    <!-- button:button.btn-top{TOP} -->
+    <button type="button" class="btn-top">
+      <i class="hidden">TOP</i>
+    </button>
+  </body>
+</html>

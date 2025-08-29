@@ -1,0 +1,594 @@
+@charset "UTF-8";
+
+.inner {
+  width: 1344px;
+  margin: 0 auto;
+}
+
+.sub-visual {
+  height: 360px;
+  background: #000 no-repeat 50% 50% / cover;
+  padding: 0 288px;
+
+  display: flex;
+  align-items: center;
+
+  animation: reveal 1s ease-in-out;
+}
+
+/* 서브페이지별 비주얼 이미지 관리 */
+.company .sub-visual {
+  background-image: url(../img/sub-visual-company.jpg);
+}
+.franchise .sub-visual {
+  background-image: url(../img/sub-visual-franchise.jpg);
+}
+.notice .sub-visual {
+  background-image: url(../img/sub-visual-notice.jpg);
+}
+.financial .sub-visual {
+  background-image: url(../img/sub-visaul-financial.jpg);
+}
+
+.login-wrap .sub-visual {
+  background: #fff;
+}
+.sub-visual h2 {
+  /* fw900+fz60+c#fff */
+  font-weight: 900;
+  font-size: 60px;
+  color: #fff;
+
+  /* backwards	애니메이션 시작 -> 애니메이션 종료 -> 기본 (css)상태 */
+  animation: slideIn 0.7s 1.3s ease backwards;
+}
+
+.sub-visual h2::before {
+  content: ""; /* ct */
+  /* db+w56+h6+bg#fff */
+  display: block;
+  width: 56px;
+  height: 6px;
+  background: #fff;
+}
+
+.login-wrap .sub-visual h2 {
+  color: #000;
+}
+
+.login-wrap .sub-visual h2::before {
+  background: #000;
+}
+
+/* .greeting h3에서 공통 이름(sec-title)으로 변경 */
+.sec-title {
+  /* fw700+fz50+c */
+  font-weight: 700;
+  font-size: 50px;
+  color: #000;
+  text-align: center; /* tac */
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* CEO 인사말 */
+.greeting {
+  /* p120-0-220 */
+  padding: 120px 0 220px;
+}
+
+.greeting-con {
+  /* background: pink; */
+  display: flex;
+  justify-content: space-between; /* jcsb */
+  margin-top: 80px;
+}
+
+.greeting-img {
+  width: 490px;
+}
+
+.greeting-txt {
+  width: 774px;
+  /* border: 5px solid #f00; */
+}
+
+.greeting-txt h4 {
+  font-weight: 800;
+  font-size: 60px;
+  color: var(--title-color);
+}
+.greeting-txt h5 {
+  /* fw700+fz30+c+mt32 */
+  font-weight: 700;
+  font-size: 30px;
+  color: #000;
+  margin-top: 32px;
+}
+.greeting-txt p {
+  /* fw500+mt32 */
+  font-weight: 500;
+  margin-top: 32px;
+}
+
+.greeting-sign {
+  margin-top: 32px;
+}
+
+.map-wrap {
+  height: 600px;
+  margin-top: 80px;
+}
+
+.map-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* 가맹점 개설 절차 */
+.process {
+  /* p120-0-220 */
+  padding: 120px 0 220px;
+}
+
+.process-list {
+  /* mt80+df */
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap; /* 줄바꿈 */
+  /* g40-72 */
+  gap: 40px 72px;
+
+  /* 카운터 세팅 -> 증가 -> 표시 */
+  /* 1. 카운터 세팅 */
+  counter-reset: process-count;
+}
+
+.process-list li {
+  /* w400+mih300+bd */
+  width: 400px;
+  min-height: 300px;
+  border-top: 3px solid #000;
+  padding: 30px 0;
+
+  /* 2. 카운터 증가 */
+  counter-increment: process-count;
+
+  /* fxsh0 */
+  /* flex-shrink: 0; */
+}
+
+.process-list li dl dt {
+  /* fw700+fz40+c */
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--main-color);
+}
+
+.process-list li dl dt::before {
+  /* 3. 카운터 표시 */
+  content: counter(process-count, decimal-leading-zero) " ";
+}
+
+.process-list li dl dd {
+  /* fw500+fz20+mt16 */
+  font-weight: 500;
+  font-size: 20px;
+  margin-top: 16px;
+}
+
+/* 공지 & 언론보도 */
+.board {
+  /* p120-0-220 */
+  padding: 120px 0 220px;
+  position: relative; /* ::after 절대배치 기준 */
+}
+
+.board::after {
+  content: "";
+  /* posa+b0+l0+w100p+h200+bg */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  /* height: 252px; */
+  aspect-ratio: 1/0.506;
+  background: url(../img/wave.png) no-repeat 0 0 / contain;
+  transform: rotateY(180deg);
+}
+
+.tab {
+  margin-top: 80px;
+}
+
+.tab-menu {
+  /* background: pink; */
+  display: flex;
+  justify-content: center;
+
+  gap: 48px;
+}
+.tab-menu a {
+  /* fw600+fz30 */
+  font-weight: 600;
+  font-size: 30px;
+  padding: 9px 0;
+  display: block;
+  color: #828282;
+}
+
+.tab-menu a.active {
+  border-bottom: 3px solid var(--main-color);
+  color: var(--main-color);
+}
+
+.tab-con {
+  margin-top: 60px;
+}
+
+.search {
+  background: #f3f6f6;
+  padding: 43px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.input-wrap {
+  border: 2px solid #000;
+  width: 580px;
+  height: 60px;
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+}
+
+.input-wrap input {
+  width: calc(100% - 44px);
+  height: 100%;
+  /* background: red; */
+  padding: 0 20px;
+}
+
+.input-wrap button {
+  width: 44px;
+  height: 44px;
+  background: url(../img/ico-search.svg) no-repeat 50% 50%;
+}
+
+.news-list {
+  margin-top: 69px;
+  display: flex;
+  flex-wrap: wrap; /* fxww: 줄바꿈 */
+  /* g70-24 */
+  gap: 70px 24px;
+}
+
+.news-list li {
+  /* w432+mih532+bd */
+  width: 432px;
+  min-height: 532px;
+  /* border: 1px solid #000; */
+
+  position: relative; /* em 절대배치 기준 */
+  background: #1ecad3;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.news-con {
+  /* margin-top: 32px; */
+  /* background: pink; */
+  padding: 32px;
+  color: #fff;
+}
+.news-con h4 {
+  font-weight: 600;
+  font-size: 24px;
+  /* color: var(--title-color); */
+  min-height: 72px; /* mih72 */
+}
+.news-con p {
+  font-weight: 500;
+  margin-top: 12px;
+  min-height: 90px;
+}
+.news-con time {
+  font-weight: 700;
+  margin-top: 12px;
+  display: block;
+}
+
+.badge {
+  /* posa+t24+l24+bg */
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 1;
+
+  background: var(--main-color);
+  /* w48+h48+bdrs50p */
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.badge::after {
+  content: "";
+  /* posa+t50p+l50p+trft */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  margin-top: -15px;
+  margin-left: -15px;
+  /* w30+h30+bg */
+  width: 30px;
+  height: 30px;
+  background: url(../img/ico-new.svg) no-repeat 50% 50%;
+  animation: shake-horizontal 0.8s 3 cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    both;
+
+  transform-origin: 50% 0;
+}
+
+.shake-horizontal {
+  animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+/* 종 흔들기 1. 동작정의, 2. 동작적용 */
+@keyframes shake-horizontal {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: rotate(-10deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(8deg);
+  }
+  90% {
+    transform: rotate(-8deg);
+  }
+}
+
+.news-list li em {
+  position: absolute;
+  /* t28+r24+bd */
+  top: 28px;
+  right: 24px;
+  z-index: 1;
+
+  border: 1px solid #fff;
+
+  /* fw700+fz16+c#fff */
+  font-weight: 700;
+  font-size: 16px;
+  color: #fff;
+
+  padding: 7px 19px;
+}
+
+.news-list li figure {
+  width: 100%;
+  height: 290px;
+  position: relative; /* figure::after 절대배치 기준 */
+}
+
+.news-list li figure::before {
+  content: "";
+  /* posa+b0+r0+w100p+h50+bg */
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transition: 0.4s;
+
+  z-index: 1;
+  width: 100%;
+  height: 100px;
+  background: url(../img/wave.png) no-repeat 100% 0 / contain;
+}
+
+.news-list li:hover figure::before {
+  right: -50px;
+}
+
+.news-list li figure::after {
+  content: "";
+  /* posa+t0+l0+w100p+h100p+bg */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* background: linear-gradient(180deg, rgba(18, 86, 47, 0.3), #fff); */
+
+  /* background: #12562f;
+  background: linear-gradient(
+    180deg,
+    rgba(18, 86, 47, 1) 0%,
+    rgba(18, 86, 47, 0.6) 30%,
+    rgba(255, 255, 255, 1) 100%
+  ); */
+}
+
+.news-list li figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 재무 정보 */
+.financial-info {
+  padding: 120px 0 220px;
+}
+.table-container {
+  width: 100%;
+}
+
+.unit {
+  margin-bottom: 16px;
+  text-align: right;
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.table-container {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  border-top: 2px solid #333;
+}
+
+.table-container th,
+.table-container td {
+  padding: 18px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.table-container tr th:first-child,
+.table-container tr td:first-child {
+  border-left: none;
+}
+.table-container tr th:last-child,
+.table-container tr td:last-child {
+  border-right: none;
+}
+
+.table-container thead th {
+  font-weight: 700;
+  background-color: #f2f2f2;
+  color: #444;
+}
+
+.table-container tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.table-container .first-col {
+  text-align: left;
+}
+
+.table-container tfoot tr td {
+  font-weight: 700;
+  background-color: #f3f6f6;
+  color: #000;
+}
+
+.table-container .highlight-text {
+  color: #12562f;
+}
+
+.table-container .highlight {
+  font-weight: 700;
+  color: #000;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  /* margin-top: 40px; */
+  margin: 50px auto 0;
+}
+
+/* 로그인 */
+.agreement {
+  padding: 120px 0 220px;
+}
+
+.agreement-con {
+  margin-top: 80px;
+  border: 5px solid #eee;
+  padding: 40px;
+}
+
+/* 스크롤 */
+.agreement-inner {
+  height: 400px;
+  overflow: auto;
+}
+
+.agreement-check {
+  margin-top: 30px;
+  /* background: pink; */
+}
+
+.agreement-check input[type="checkbox"] {
+  display: none;
+}
+
+.agreement-check input[type="checkbox"] + label {
+  /* background: blue; */
+  cursor: pointer;
+  display: inline-flex;
+  gap: 15px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.agreement-check input[type="checkbox"] + label .toggle {
+  display: block;
+  width: 104px;
+  height: 46px;
+  border: 2px solid #000000;
+  border-radius: 30px;
+
+  position: relative;
+  background: #ffffff;
+}
+
+.agreement-check input[type="checkbox"]:checked + label .toggle {
+  background: var(--main-color);
+}
+
+.agreement-check input[type="checkbox"] + label .toggle::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -10px;
+  height: 59px;
+  width: 59px;
+  border-radius: 50%;
+  /* border: 2px solid #000000; */
+  background-image: url(../img/ico-oranghe.svg);
+  transition: 0.4s;
+}
+
+.agreement-check input[type="checkbox"]:checked + label .toggle::before {
+  left: 50px;
+}
