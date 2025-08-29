@@ -244,3 +244,10 @@
     transform: translate(0, 0) rotate(0deg);
   }
 }
+
+.headline {
+  animation: showAni 2s ease-in-out;
+}
+[data-aos="showAni"].aos-animate {
+  animation: showAni 2s ease-in-out both;
+}
